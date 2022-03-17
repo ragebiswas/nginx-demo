@@ -1205,64 +1205,64 @@ objs/src/http/modules/ngx_http_upstream_zone_module.o:	$(CORE_DEPS) $(HTTP_DEPS)
 manpage:	objs/nginx.8
 
 objs/nginx.8:	man/nginx.8 objs/ngx_auto_config.h
-	sed -e "s|%%PREFIX%%|/tmp/nginx|" \
-		-e "s|%%PID_PATH%%|/tmp/nginx/logs/nginx.pid|" \
-		-e "s|%%CONF_PATH%%|/tmp/nginx/conf/nginx.conf|" \
-		-e "s|%%ERROR_LOG_PATH%%|/tmp/nginx/logs/error.log|" \
+	sed -e "s|%%PREFIX%%|/home/raj/nginx-demo/nginx|" \
+		-e "s|%%PID_PATH%%|/home/raj/nginx-demo/nginx/logs/nginx.pid|" \
+		-e "s|%%CONF_PATH%%|/home/raj/nginx-demo/nginx/conf/nginx.conf|" \
+		-e "s|%%ERROR_LOG_PATH%%|/home/raj/nginx-demo/nginx/logs/error.log|" \
 		< man/nginx.8 > $@
 
 install:	build 
-	test -d '$(DESTDIR)/tmp/nginx' || mkdir -p '$(DESTDIR)/tmp/nginx'
+	test -d '$(DESTDIR)/home/raj/nginx-demo/nginx' || mkdir -p '$(DESTDIR)/home/raj/nginx-demo/nginx'
 
-	test -d '$(DESTDIR)/tmp/nginx/sbin' \
-		|| mkdir -p '$(DESTDIR)/tmp/nginx/sbin'
-	test ! -f '$(DESTDIR)/tmp/nginx/sbin/nginx' \
-		|| mv '$(DESTDIR)/tmp/nginx/sbin/nginx' \
-			'$(DESTDIR)/tmp/nginx/sbin/nginx.old'
-	cp objs/nginx '$(DESTDIR)/tmp/nginx/sbin/nginx'
+	test -d '$(DESTDIR)/home/raj/nginx-demo/nginx/sbin' \
+		|| mkdir -p '$(DESTDIR)/home/raj/nginx-demo/nginx/sbin'
+	test ! -f '$(DESTDIR)/home/raj/nginx-demo/nginx/sbin/nginx' \
+		|| mv '$(DESTDIR)/home/raj/nginx-demo/nginx/sbin/nginx' \
+			'$(DESTDIR)/home/raj/nginx-demo/nginx/sbin/nginx.old'
+	cp objs/nginx '$(DESTDIR)/home/raj/nginx-demo/nginx/sbin/nginx'
 
-	test -d '$(DESTDIR)/tmp/nginx/conf' \
-		|| mkdir -p '$(DESTDIR)/tmp/nginx/conf'
+	test -d '$(DESTDIR)/home/raj/nginx-demo/nginx/conf' \
+		|| mkdir -p '$(DESTDIR)/home/raj/nginx-demo/nginx/conf'
 
-	cp conf/koi-win '$(DESTDIR)/tmp/nginx/conf'
-	cp conf/koi-utf '$(DESTDIR)/tmp/nginx/conf'
-	cp conf/win-utf '$(DESTDIR)/tmp/nginx/conf'
+	cp conf/koi-win '$(DESTDIR)/home/raj/nginx-demo/nginx/conf'
+	cp conf/koi-utf '$(DESTDIR)/home/raj/nginx-demo/nginx/conf'
+	cp conf/win-utf '$(DESTDIR)/home/raj/nginx-demo/nginx/conf'
 
-	test -f '$(DESTDIR)/tmp/nginx/conf/mime.types' \
-		|| cp conf/mime.types '$(DESTDIR)/tmp/nginx/conf'
-	cp conf/mime.types '$(DESTDIR)/tmp/nginx/conf/mime.types.default'
+	test -f '$(DESTDIR)/home/raj/nginx-demo/nginx/conf/mime.types' \
+		|| cp conf/mime.types '$(DESTDIR)/home/raj/nginx-demo/nginx/conf'
+	cp conf/mime.types '$(DESTDIR)/home/raj/nginx-demo/nginx/conf/mime.types.default'
 
-	test -f '$(DESTDIR)/tmp/nginx/conf/fastcgi_params' \
-		|| cp conf/fastcgi_params '$(DESTDIR)/tmp/nginx/conf'
+	test -f '$(DESTDIR)/home/raj/nginx-demo/nginx/conf/fastcgi_params' \
+		|| cp conf/fastcgi_params '$(DESTDIR)/home/raj/nginx-demo/nginx/conf'
 	cp conf/fastcgi_params \
-		'$(DESTDIR)/tmp/nginx/conf/fastcgi_params.default'
+		'$(DESTDIR)/home/raj/nginx-demo/nginx/conf/fastcgi_params.default'
 
-	test -f '$(DESTDIR)/tmp/nginx/conf/fastcgi.conf' \
-		|| cp conf/fastcgi.conf '$(DESTDIR)/tmp/nginx/conf'
-	cp conf/fastcgi.conf '$(DESTDIR)/tmp/nginx/conf/fastcgi.conf.default'
+	test -f '$(DESTDIR)/home/raj/nginx-demo/nginx/conf/fastcgi.conf' \
+		|| cp conf/fastcgi.conf '$(DESTDIR)/home/raj/nginx-demo/nginx/conf'
+	cp conf/fastcgi.conf '$(DESTDIR)/home/raj/nginx-demo/nginx/conf/fastcgi.conf.default'
 
-	test -f '$(DESTDIR)/tmp/nginx/conf/uwsgi_params' \
-		|| cp conf/uwsgi_params '$(DESTDIR)/tmp/nginx/conf'
+	test -f '$(DESTDIR)/home/raj/nginx-demo/nginx/conf/uwsgi_params' \
+		|| cp conf/uwsgi_params '$(DESTDIR)/home/raj/nginx-demo/nginx/conf'
 	cp conf/uwsgi_params \
-		'$(DESTDIR)/tmp/nginx/conf/uwsgi_params.default'
+		'$(DESTDIR)/home/raj/nginx-demo/nginx/conf/uwsgi_params.default'
 
-	test -f '$(DESTDIR)/tmp/nginx/conf/scgi_params' \
-		|| cp conf/scgi_params '$(DESTDIR)/tmp/nginx/conf'
+	test -f '$(DESTDIR)/home/raj/nginx-demo/nginx/conf/scgi_params' \
+		|| cp conf/scgi_params '$(DESTDIR)/home/raj/nginx-demo/nginx/conf'
 	cp conf/scgi_params \
-		'$(DESTDIR)/tmp/nginx/conf/scgi_params.default'
+		'$(DESTDIR)/home/raj/nginx-demo/nginx/conf/scgi_params.default'
 
-	test -f '$(DESTDIR)/tmp/nginx/conf/nginx.conf' \
-		|| cp conf/nginx.conf '$(DESTDIR)/tmp/nginx/conf/nginx.conf'
-	cp conf/nginx.conf '$(DESTDIR)/tmp/nginx/conf/nginx.conf.default'
+	test -f '$(DESTDIR)/home/raj/nginx-demo/nginx/conf/nginx.conf' \
+		|| cp conf/nginx.conf '$(DESTDIR)/home/raj/nginx-demo/nginx/conf/nginx.conf'
+	cp conf/nginx.conf '$(DESTDIR)/home/raj/nginx-demo/nginx/conf/nginx.conf.default'
 
-	test -d '$(DESTDIR)/tmp/nginx/logs' \
-		|| mkdir -p '$(DESTDIR)/tmp/nginx/logs'
+	test -d '$(DESTDIR)/home/raj/nginx-demo/nginx/logs' \
+		|| mkdir -p '$(DESTDIR)/home/raj/nginx-demo/nginx/logs'
 
-	test -d '$(DESTDIR)/tmp/nginx/logs' \
-		|| mkdir -p '$(DESTDIR)/tmp/nginx/logs'
+	test -d '$(DESTDIR)/home/raj/nginx-demo/nginx/logs' \
+		|| mkdir -p '$(DESTDIR)/home/raj/nginx-demo/nginx/logs'
 
-	test -d '$(DESTDIR)/tmp/nginx/html' \
-		|| cp -R html '$(DESTDIR)/tmp/nginx'
+	test -d '$(DESTDIR)/home/raj/nginx-demo/nginx/html' \
+		|| cp -R html '$(DESTDIR)/home/raj/nginx-demo/nginx'
 
-	test -d '$(DESTDIR)/tmp/nginx/logs' \
-		|| mkdir -p '$(DESTDIR)/tmp/nginx/logs'
+	test -d '$(DESTDIR)/home/raj/nginx-demo/nginx/logs' \
+		|| mkdir -p '$(DESTDIR)/home/raj/nginx-demo/nginx/logs'

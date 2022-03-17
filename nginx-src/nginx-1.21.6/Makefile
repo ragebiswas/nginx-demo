@@ -16,12 +16,12 @@ modules:
 	$(MAKE) -f objs/Makefile modules
 
 upgrade:
-	/tmp/nginx/sbin/nginx -t
+	/home/raj/nginx-demo/nginx/sbin/nginx -t
 
-	kill -USR2 `cat /tmp/nginx/logs/nginx.pid`
+	kill -USR2 `cat /home/raj/nginx-demo/nginx/logs/nginx.pid`
 	sleep 1
-	test -f /tmp/nginx/logs/nginx.pid.oldbin
+	test -f /home/raj/nginx-demo/nginx/logs/nginx.pid.oldbin
 
-	kill -QUIT `cat /tmp/nginx/logs/nginx.pid.oldbin`
+	kill -QUIT `cat /home/raj/nginx-demo/nginx/logs/nginx.pid.oldbin`
 
 .PHONY:	build install modules upgrade

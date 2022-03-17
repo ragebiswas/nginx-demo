@@ -1,4 +1,4 @@
-#define NGX_CONFIGURE " --with-http_auth_request_module --prefix=/tmp/nginx"
+#define NGX_CONFIGURE " --with-http_auth_request_module --prefix=/home/raj/nginx-demo/nginx"
 
 #ifndef NGX_COMPILER
 #define NGX_COMPILER  "gcc 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) "
@@ -409,7 +409,7 @@
 
 
 #ifndef NGX_PREFIX
-#define NGX_PREFIX  "/tmp/nginx/"
+#define NGX_PREFIX  "/home/raj/nginx-demo/nginx/"
 #endif
 
 
