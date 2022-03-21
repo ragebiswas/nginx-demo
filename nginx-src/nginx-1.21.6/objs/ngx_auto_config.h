@@ -1,7 +1,7 @@
 #define NGX_CONFIGURE " --with-http_auth_request_module --prefix=/home/raj/nginx-demo/nginx"
 
 #ifndef NGX_COMPILER
-#define NGX_COMPILER  "gcc 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) "
+#define NGX_COMPILER  "gcc 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04) "
 #endif
 
 
