@@ -16,9 +16,14 @@ Basic tutorial of nginx that demonstrates primary nginx capabilities
 
 ## Running 
 
-Run following command:
+Execute the driver script:
 
-```bash
-$> /your/path/to/nginx -c path_to_conf -s reload
+```shell
+$> python3 -m venv venv
+$> source venv/bin/activate
+$> python driver.py
 ```
 
+## Maintainers
+
+- [raj](mailto:ragebiswas@gmail.com)

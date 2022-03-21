@@ -6,7 +6,8 @@ import subprocess
 
 demo_options_dict = {
     '0: Basic Demo': '0-base.conf',
-    '1: Static Serving': '1-static.conf',
+    '1: Static serving': '1-static.conf',
+    '2: Rewrite / redirect': '2-redir.conf',
     '[Quit]': None
 }
 
